@@ -11,10 +11,25 @@ a {
   align-items: center;
   margin-top: 5%; }
 
-#login-form {
+#login-container {
   display: flex;
   flex-direction: column;
   width: 600px;
-  background: green; }
+  margin-left: 25%; }
+
+#signup-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-left: 35%; }
+
+.account-message {
+  margin-top: 50px; }
+
+#wikipedia-image {
+  width: 70px; }
+
+#bottom-signup {
+  padding: 90px 0px 0px 200px; }
 
 /*# sourceMappingURL=style.css.map */
