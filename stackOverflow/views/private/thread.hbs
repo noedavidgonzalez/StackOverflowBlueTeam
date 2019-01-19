@@ -1,0 +1,27 @@
+<div>
+  <a href="/questions">Go back</a>
+
+  <h1>{{question.pregunta}}</h1>
+
+  <h2>{{#each question.respuestas}}</h2>
+    <ul>{{this}}</ul>
+</div>
+
+<p>Add an answer to the thread</p>
+<form action="/answers/add?question_id={{question._id}}" method="post">
+  <label for="">User:</label>
+  <input type="text" name="user">
+
+  <label for="">Answer:</label>
+  <textarea type="text" name="answer"></textarea>
+
+  <button type="submit">ADD</button>
+</form>
+
+<h2>Answers</h2>
+{{#each question.answer}}
+<div class="answer-item">
+  <p>{{this.answer}}</p>
+  <span>{{this.username}}</span>
+</div>
+{{/each}}
