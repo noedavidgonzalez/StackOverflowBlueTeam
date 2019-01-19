@@ -5,4 +5,16 @@ body {
 a {
   color: #00B7FF; }
 
+#main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%; }
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  background: green; }
+
 /*# sourceMappingURL=style.css.map */

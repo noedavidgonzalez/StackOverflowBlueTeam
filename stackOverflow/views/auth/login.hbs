@@ -1,0 +1,23 @@
+<img src="" alt="">
+<form action="/login" method="POST" id="login-form">
+  <div>
+    <label for="username">Nombre de Usuario:</label>
+    <input type="text" name="username">
+  </div>
+  <div>
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password">
+  </div>
+  {{#if message}}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+  <div>
+    <input type="submit" value="Log In">
+  </div>
+  <br>
+  Acabas de recordar que no tienes cuenta? Vaya, pero que imbecil eres! No hay problema, registrate <a href="/signup">aqui</a>
+
+  <br>
+
+  <a href="/">Menu prinicipal</a>
+</form>
