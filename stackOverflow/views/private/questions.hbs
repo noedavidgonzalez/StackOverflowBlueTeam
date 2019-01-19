@@ -1,0 +1,21 @@
+<h1>Preguntas</h1>
+<form action="/buscar" method="post">
+ <label for="titulo">Buscar</label>
+ <input type="text" name="titulo" value="" placeholder="Buscar una pregunta">
+ <button type="submit" name="button">Buscar</button>
+</form>
+<div>
+ <table>
+   <tr>
+     <th>Pregunta</th>
+     <th>Autor</th>
+   </tr>
+   {{#each arrayOfQuestions}}
+   <tr>
+     <td><a href="/question/{{this._id}}">{{this.pregunta}}</a></td>
+     <td> {{this.username.username}}</td>
+   </tr>
+   {{/each}}
+ </table>
+ <a href="/questions/add">Añadir nueva pregunta</a>
+</div>

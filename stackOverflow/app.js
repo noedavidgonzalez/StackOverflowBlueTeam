@@ -16,8 +16,8 @@ const User         = require("./models/user");
 const flash        = require("connect-flash");
 
 mongoose
-  .connect('mongodb://localhost/stackoverflow', {useNewUrlParser: true})
-  // .connect("mongodb://admin2019:admin2019@ds161134.mlab.com:61134/stackoverflowdb")
+  // .connect('mongodb://localhost/stackoverflow', {useNewUrlParser: true})
+  .connect(`mongodb://superadmin:admin2019@ds161134.mlab.com:61134/stackoverflowdb`)
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -94,9 +94,10 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 const authRoutes = require("./routes/auth-routes");
+const Private = require("./routes/private")
 app.use('/', index);
-app.use("/", authRoutes)
-
+app.use("/", authRoutes);
+app.use("/", Private);
 
 
 module.exports = app;

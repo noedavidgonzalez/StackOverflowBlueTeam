@@ -71,7 +71,7 @@ authRoutes.post("/signup", (req, res, next ) =>{
           message: "Algo salio mal, no he podido guarduar tu usuario. Intentalo en 3 horas 2 minutos 47 segundo exactos!"
         })
       } else{
-        res.redirect("/private-page")
+        res.redirect("/questions")
       }
     }))
   })
@@ -85,14 +85,14 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/private-page",
+  successRedirect: "/questions",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
 }));
 
-authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res, next ) =>{
-  res.render("private", { user : req.user})
+authRoutes.get("/questions", ensureLogin.ensureLoggedIn(), (req, res, next ) =>{
+  res.render("private/questions", { user : req.user})
 })
 
 authRoutes.get("/logout", (req, res, next) =>{
