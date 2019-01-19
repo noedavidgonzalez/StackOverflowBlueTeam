@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const questionSchema = new Schema({
-  username: [{type: Sechema.ObjectId, ref: 'User'}],
+  username: [{type: Schema.ObjectId, ref: 'User'}],
   pregunta: String,
-  respuestas: [{type: Sechema.ObjectId, ref: 'Answer'}] 
+  respuestas: [{type: Schema.ObjectId, ref: 'Answer'}] 
 }, {
   timestamps: true
 });
