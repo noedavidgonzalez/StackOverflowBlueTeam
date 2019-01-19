@@ -6,10 +6,13 @@ const User = require("../models/user");
 const Answer = require("../models/Answer");
 
 Private.get('/questions', ensureLogin.ensureLoggedIn(),(req, res, next)=>{
+
+  console.log('entreeeee')
  Question.find()
+ .populate('username')
  .then(arrayOfQuestions => {
-   console.log(arrayOfQuestions);
-   res.render('/questions', arrayOfQuestions);
+   console.log('valor' + arrayOfQuestions);
+   res.render('/questions', {arrayOfQuestions});
  })
  .catch( err => {
    console.log(err);
